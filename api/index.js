@@ -4,7 +4,7 @@ const cors=require('cors');
 const port = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: 'https://bajaj-frontend-xi.vercel.app' // Replace with your frontend's URL
+  origin: '*' // Replace with your frontend's URL
 }));
 
 app.use(express.json());
