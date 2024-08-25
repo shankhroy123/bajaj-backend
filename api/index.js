@@ -3,9 +3,13 @@ const app = express();
 const cors=require('cors');
 const port = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://bajaj-frontend-xi.vercel.app' // Replace with your frontend's URL
+}));
 
 app.use(express.json());
+
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
 // POST /bfhl
 app.post('/bfhl', (req, res) => {
@@ -42,3 +46,5 @@ app.get('/bfhl', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+module.exports = app;
